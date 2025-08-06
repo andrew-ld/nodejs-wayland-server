@@ -1,2 +1,0 @@
-option('napi_include_path', type : 'string', description : 'Path to node-addon-api headers')
-option('node_include_path', type : 'string', description : 'Path to Node.js headers')

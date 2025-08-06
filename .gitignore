@@ -1,3 +1,7 @@
 node_modules/
 builddir/
 subprojects/
+*.so*
+*.node
+artifacts/*
+!artifacts/.gitkeep

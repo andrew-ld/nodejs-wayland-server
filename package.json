@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "nodejs wrapper for a nested wayland server",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "configure": "meson setup builddir --reconfigure -Dnapi_include_path=\"$(node -p 'require(`node-addon-api`).include')\" -Dnode_include_path=\"$(node -p 'require(`node-addon-api`).include_dir')\"",
-    "build": "meson compile -C builddir",
-    "install": "npm run configure && npm run build"
+    "configure": "meson setup builddir --reconfigure --prefix=$(pwd)/builddir/install",
+    "build": "meson install -C builddir",
+    "install": "npm run configure && npm run build && node copy-artifacts.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,18 @@
   },
   "homepage": "https://github.com/andrew-ld/nodejs-wayland-server#readme",
   "devDependencies": {
+    "node-gyp": "^11.3.0"
+  },
+  "files": [
+    "index.js",
+    "*.node",
+    "*.so*",
+    "src",
+    "subprojects",
+    "meson.build",
+    "meson_options.txt"
+  ],
+  "dependencies": {
     "node-addon-api": "^8.5.0"
   }
 }
