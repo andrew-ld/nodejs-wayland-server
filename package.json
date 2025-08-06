@@ -29,12 +29,8 @@
   },
   "files": [
     "index.js",
-    "*.node",
-    "*.so*",
-    "src",
-    "subprojects",
-    "meson.build",
-    "meson_options.txt"
+    "artifacts/*.node",
+    "artifacts/*.so"
   ],
   "dependencies": {
     "node-addon-api": "^8.5.0"
