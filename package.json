@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-wayland-server",
+  "version": "1.0.0",
+  "description": "nodejs wrapper for a nested wayland server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "configure": "meson setup builddir --reconfigure -Dnapi_include_path=\"$(node -p 'require(`node-addon-api`).include')\" -Dnode_include_path=\"$(node -p 'require(`node-addon-api`).include_dir')\"",
+    "build": "meson compile -C builddir",
+    "install": "npm run configure && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-ld/nodejs-wayland-server.git"
+  },
+  "keywords": [
+    "nodejs",
+    "wayland"
+  ],
+  "author": "andrew-ld",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/andrew-ld/nodejs-wayland-server/issues"
+  },
+  "homepage": "https://github.com/andrew-ld/nodejs-wayland-server#readme"
+}
