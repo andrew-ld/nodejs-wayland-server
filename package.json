@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "configure": "meson setup builddir --reconfigure --prefix=$(pwd)/builddir/install",
+    "configure": "meson setup builddir --reconfigure --prefix=$(pwd)/builddir/install -Dc_link_args=-Wl,-rpath,\\$ORIGIN -Dcpp_link_args=-Wl,-rpath,\\$ORIGIN",
     "build": "meson install -C builddir",
     "install": "npm run configure && npm run build && node copy-artifacts.js"
   },
@@ -25,14 +25,11 @@
   },
   "homepage": "https://github.com/andrew-ld/nodejs-wayland-server#readme",
   "devDependencies": {
-    "node-gyp": "^11.3.0"
+    "node-addon-api": "^8.5.0"
   },
   "files": [
     "index.js",
     "artifacts/*.node",
     "artifacts/*.so"
-  ],
-  "dependencies": {
-    "node-addon-api": "^8.5.0"
-  }
+  ]
 }

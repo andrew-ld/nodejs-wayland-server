@@ -5,7 +5,8 @@ project(
     default_options: ['cpp_std=c++17'],
 )
 
-node_inc = include_directories('node_modules/node-addon-api')
+node_addon_inc = include_directories('node_modules/node-addon-api')
+node_inc = include_directories('/usr/include/node')
 
 weston_opts = [
     'backend-wayland=true',
@@ -48,7 +49,7 @@ shared_module(
     'src/wrapper.cpp',
     name_suffix: 'node',
     name_prefix: '',
-    include_directories: [node_inc],
+    include_directories: [node_addon_inc, node_inc],
     dependencies: [libexec_weston_dep],
     install: true,
     install_rpath: '$ORIGIN',

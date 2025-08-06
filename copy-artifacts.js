@@ -34,7 +34,15 @@ if (allFiles.length === 0) {
 }
 
 const artifactsToCopy = allFiles.filter(file => {
-    return file.endsWith('.node') || file.endsWith('.so');
+    if (file.endsWith('.node')) {
+        return true;
+    }
+
+    if (file.endsWith('.so')) {
+        return true;
+    }
+
+    return false;
 });
 
 if (artifactsToCopy.length === 0) {
