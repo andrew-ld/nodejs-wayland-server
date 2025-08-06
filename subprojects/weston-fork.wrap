@@ -1,0 +1,4 @@
+[wrap-git]
+url = https://github.com/andrew-ld/weston-fork.git
+revision = d0d06172f09e99f4fd49fecf82cb05eea37e2cf6
+depth = 1
