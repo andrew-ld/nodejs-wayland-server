@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/andrew-ld/nodejs-wayland-server/issues"
   },
-  "homepage": "https://github.com/andrew-ld/nodejs-wayland-server#readme"
+  "homepage": "https://github.com/andrew-ld/nodejs-wayland-server#readme",
+  "devDependencies": {
+    "node-addon-api": "^8.5.0"
+  }
 }
