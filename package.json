@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "configure": "meson setup $(pwd)/builddir --reconfigure --prefix=$(pwd)/builddir/install -Dc_link_args=-Wl,-rpath,\\$ORIGIN -Dcpp_link_args=-Wl,-rpath,\\$ORIGIN",
     "build": "meson install -C $(pwd)/builddir",
-    "install": "npm run configure && npm run build && node copy-artifacts.js"
+    "postinstall": "npm run configure && npm run build && node copy-artifacts.js"
   },
   "repository": {
     "type": "git",
