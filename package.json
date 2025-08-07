@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "configure": "bash ./configure_meson.sh",
-    "build": "meson install -C $(pwd)/builddir",
-    "postinstall": "npm run configure && npm run build && node copy-artifacts.js"
+    "configure": "bash ./meson-configure.sh",
+    "build": "bash ./meson-build.sh",
+    "clean": "bash ./meson-cleanup.sh",
+    "postinstall": "npm run configure && npm run build && npm run clean"
   },
   "repository": {
     "type": "git",
@@ -32,13 +33,15 @@
     "node": ">=22"
   },
   "files": [
-    "artifacts/nodejs_wayland.d.ts",
-    "copy-artifacts.js",
+    "LICENSE",
     "index.js",
+    "src/*.cpp",
+    "artifacts/*.so",
+    "artifacts/*.node",
+    "artifacts/*.ts",
     "meson.build",
     "meson_options.txt",
-    "src/wrapper.cpp",
-    "subprojects/weston-fork.wrap",
-    "configure_meson.sh"
+    "meson-*.sh",
+    "subprojects/weston-fork.wrap"
   ]
 }

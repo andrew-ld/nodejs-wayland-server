@@ -2,7 +2,7 @@
 
 set -xe
 
-make_relative_if_inside() {
+make_relative_when_children() {
     local base
     local path
     base=$(realpath "$1")
@@ -17,8 +17,8 @@ make_relative_if_inside() {
 napi_include_path=$(node -p "require('node-addon-api').include_dir" | tr -d '"')
 node_include_path=$(node -p "require('node-api-headers').include_dir" | tr -d '"')
 
-napi_include_path=$(make_relative_if_inside "$(pwd)" "$napi_include_path")
-node_include_path=$(make_relative_if_inside "$(pwd)" "$node_include_path")
+napi_include_path=$(make_relative_when_children "$(pwd)" "$napi_include_path")
+node_include_path=$(make_relative_when_children "$(pwd)" "$node_include_path")
 
 meson setup "$(pwd)/builddir" \
     --reconfigure \
