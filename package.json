@@ -38,6 +38,7 @@
     "meson.build",
     "meson_options.txt",
     "src/wrapper.cpp",
-    "subprojects/weston-fork.wrap"
+    "subprojects/weston-fork.wrap",
+    "configure_meson.sh"
   ]
 }
