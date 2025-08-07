@@ -32,9 +32,12 @@
     "node": ">=22"
   },
   "files": [
+    "artifacts/nodejs_wayland.d.ts",
+    "copy-artifacts.js",
     "index.js",
-    "artifacts/*.node",
-    "artifacts/*.so",
-    "artifacts/*.ts"
+    "meson.build",
+    "meson_options.txt",
+    "src/wrapper.cpp",
+    "subprojects/weston-fork.wrap"
   ]
 }
