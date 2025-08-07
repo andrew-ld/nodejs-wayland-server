@@ -24,7 +24,7 @@
     "url": "https://github.com/andrew-ld/nodejs-wayland-server/issues"
   },
   "homepage": "https://github.com/andrew-ld/nodejs-wayland-server#readme",
-  "devDependencies": {
+  "dependencies": {
     "node-addon-api": "^8.5.0",
     "node-api-headers": "^1.5.0"
   },
