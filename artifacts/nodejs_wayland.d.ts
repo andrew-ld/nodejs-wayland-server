@@ -1,3 +1,3 @@
 export function initialize(): void;
 
-export function wetMain(argv: string[]): Promise<number>;
+export function wetMain(argv: string[], readyCallback: Function): Promise<number>;

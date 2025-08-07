@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "nodejs wrapper for a nested wayland server",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
+  "types": "./index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "configure": "bash ./meson-configure.sh",
@@ -42,6 +43,7 @@
     "meson.build",
     "meson_options.txt",
     "meson-*.sh",
-    "subprojects/weston-fork.wrap"
+    "subprojects/weston-fork.wrap",
+    "index.d.ts"
   ]
 }

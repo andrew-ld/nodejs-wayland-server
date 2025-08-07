@@ -20,7 +20,7 @@ node_include_path=$(node -p "require('node-api-headers').include_dir" | tr -d '"
 napi_include_path=$(make_relative_when_children "$(pwd)" "$napi_include_path")
 node_include_path=$(make_relative_when_children "$(pwd)" "$node_include_path")
 
-meson setup "$(pwd)/builddir" \
+meson setup "./builddir" \
     --reconfigure \
     --prefix="$(pwd)/builddir/install" \
     -Dc_link_args=-Wl,-rpath,\$ORIGIN \

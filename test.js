@@ -1,3 +1,9 @@
-import nodejsWayland from "./index.js";
+const server = require("./index.js");
+const { spawn } = require("node:child_process");
 
-nodejsWayland.wetMain(["server", "--shell=kiosk", "--xwayland"]);
+server
+  .launchWaylandServer(() => {
+    spawn("glxgears");
+  })
+  .then((code) => console.log("exit:", code))
+  .catch((error) => console.error("error:", error));

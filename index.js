@@ -1,8 +1,12 @@
-import { createRequire } from "module";
-
-const require = createRequire(import.meta.url);
 const nodejsWayland = require("./artifacts/nodejs_wayland");
 
 nodejsWayland.initialize();
 
-export default nodejsWayland;
+async function launchWaylandServer(readyCallback) {
+    const args = ["weston", "--shell=kiosk", "--xwayland"];
+    return await nodejsWayland.wetMain(args, readyCallback);
+}
+
+module.exports = {
+    launchWaylandServer: launchWaylandServer,
+};
