@@ -43,6 +43,9 @@ Napi::Value Initialize(const Napi::CallbackInfo &info) {
   if (!moduleMapString.empty()) {
     setenv("WESTON_MODULE_MAP", moduleMapString.c_str(), 1);
   }
+
+  setenv("WESTON_DATA_DIR", (artifactsPath / "weston").c_str(), 1);
+
   return env.Undefined();
 }
 

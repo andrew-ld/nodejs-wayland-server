@@ -30,7 +30,7 @@ declare const WaylandServerInterface: {
    *   console.error('Server failed to start or an error occurred:', err);
    * });
    */
-  launchWaylandServer(readyCallback?: ReadyCallback): Promise<number>;
+  launchWaylandServer(readyCallback: ReadyCallback): Promise<number>;
 };
 
 
