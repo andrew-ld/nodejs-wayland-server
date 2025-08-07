@@ -5,3 +5,4 @@ subprojects/
 *.node
 artifacts/*
 !artifacts/.gitkeep
+!artifacts/nodejs_wayland.d.ts
