@@ -40,6 +40,8 @@
     "artifacts/*.so",
     "artifacts/*.node",
     "artifacts/*.ts",
+    "artifacts/weston/*.png",
+    "artifacts/weston/*.svg",
     "meson.build",
     "meson_options.txt",
     "meson-*.sh",
