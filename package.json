@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "configure": "meson setup $(pwd)/builddir --reconfigure --prefix=$(pwd)/builddir/install -Dc_link_args=-Wl,-rpath,\\$ORIGIN -Dcpp_link_args=-Wl,-rpath,\\$ORIGIN",
+    "configure": "bash ./configure_meson.sh",
     "build": "meson install -C $(pwd)/builddir",
     "postinstall": "npm run configure && npm run build && node copy-artifacts.js"
   },
