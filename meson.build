@@ -6,7 +6,7 @@ project(
 )
 
 node_addon_inc = include_directories('node_modules/node-addon-api')
-node_inc = include_directories('/usr/include/node')
+node_inc = include_directories('node_modules/node-api-headers/include')
 
 weston_opts = [
     'backend-wayland=true',
