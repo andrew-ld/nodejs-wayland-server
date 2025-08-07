@@ -34,6 +34,7 @@
   "files": [
     "index.js",
     "artifacts/*.node",
-    "artifacts/*.so"
+    "artifacts/*.so",
+    "artifacts/*.ts"
   ]
 }
